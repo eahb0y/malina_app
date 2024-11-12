@@ -1,0 +1,18 @@
+{
+  "home" : "Лента",
+  "favourite" : "Избранное",
+  "profile" : "Профиль",
+  "basket" : "Корзина",
+  "basket_eat" : "Еда",
+  "basket_stuff" : "Товары",
+  "search_on" : "Искать в Malina",
+  "delivery" : "Доставка",
+  "order_at" : "В заведении",
+  "order" : "Заказать",
+  "clean" : "Очистить",
+  "qr_title" : "Поместите QR-код в рамку",
+  "product_add_basket" : "Товар добавлен в корзину",
+  "som" : "{num} C",
+  "sum" : "C",
+  "add" : "Добавки"
+}
