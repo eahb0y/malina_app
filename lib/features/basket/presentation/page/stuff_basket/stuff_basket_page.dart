@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:malina_delivery/constants/constants.dart';
 import 'package:malina_delivery/core/utils/app_utils.dart';
-import 'package:malina_delivery/core/widgets/basket_item_widget/basket_item_widget.dart';
 import 'package:malina_delivery/features/basket/presentation/bloc/stuff_bloc/stuff_bloc.dart';
+import 'package:malina_delivery/features/basket/presentation/page/stuff_basket/widget/stuff_basket_item_widget.dart';
 import 'package:malina_delivery/generated/l10n.dart';
 
 class StuffBasketPage extends StatefulWidget {
@@ -49,7 +49,7 @@ class _StuffBasketPageState extends State<StuffBasketPage> {
               SliverPadding(
                 padding: AppUtils.kPaddingHor16,
                 sliver: SliverList.separated(
-                  itemBuilder: (_, index) => BasketItemWidget(
+                  itemBuilder: (_, index) => StuffBasketItemWidget(
                     deleteProduct: () {
                       context.read<StuffBloc>().add(DeleteItemCallEvent(
                           productId: state.stuffs?[index].productId ?? ""));

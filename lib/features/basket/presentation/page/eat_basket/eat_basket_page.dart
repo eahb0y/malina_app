@@ -4,7 +4,6 @@ import 'package:malina_delivery/core/utils/app_utils.dart';
 import 'package:malina_delivery/features/basket/presentation/bloc/eat_bloc/eat_bloc.dart';
 import 'package:malina_delivery/features/basket/presentation/page/eat_basket/widget/delivery_basket_widget.dart';
 import 'package:malina_delivery/features/basket/presentation/page/eat_basket/widget/eat_basket_appBar_widget.dart';
-import 'package:malina_delivery/core/widgets/basket_item_widget/basket_item_widget.dart';
 import 'package:malina_delivery/features/basket/presentation/page/eat_basket/widget/order_at_basket_widget.dart';
 import 'package:malina_delivery/generated/l10n.dart';
 

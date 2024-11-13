@@ -8,15 +8,17 @@ import 'package:malina_delivery/core/utils/app_utils.dart';
 import 'package:malina_delivery/core/widgets/cached_network_image/custom_cached_network_image.dart';
 import 'package:malina_delivery/features/basket/presentation/page/eat_basket/widget/basket_add_remove_button_widget.dart';
 import 'package:malina_delivery/generated/l10n.dart';
+import 'package:malina_delivery/route/app_routes.dart';
+import 'package:malina_delivery/route/name_routes.dart';
 
-class BasketItemWidget extends StatelessWidget {
+class EatBasketItemWidget extends StatelessWidget {
   final ProductMockDataEntity? item;
   final int? count;
   final Function() onAddProduct;
   final Function() onRemoveProduct;
   final Function() deleteProduct;
 
-  const BasketItemWidget({
+  const EatBasketItemWidget({
     super.key,
     required this.item,
     required this.count,
@@ -37,10 +39,14 @@ class BasketItemWidget extends StatelessWidget {
         children: [
           const Row(
             children: [
-              Text("Bellagio Coffee"),
+              Text(
+                "Bellagio Coffee",
+                style: AppTextStyles.categoryName,
+              ),
               Icon(Icons.navigate_next_outlined)
             ],
           ),
+          AppUtils.kBoxHeight6,
           AppUtils.kDivider,
           AppUtils.kBoxHeight12,
           Row(
@@ -57,10 +63,22 @@ class BasketItemWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(item?.name ?? ""),
-                        Text(AppLocalization.current.som(item?.price ?? "")),
+                        Expanded(
+                          child: Text(
+                            item?.name ?? "",
+                            style: AppTextStyles.productName,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                        AppUtils.kBoxWidth14,
+                        Text(
+                          Functions.moneyFormat(item?.price ?? 0),
+                          style: AppTextStyles.productName,
+                        ),
                       ],
                     ),
                     AppUtils.kBoxHeight4,
@@ -68,7 +86,7 @@ class BasketItemWidget extends StatelessWidget {
                       item?.name ?? "",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 3,
-                      // style: AppTextStyles.flightPreferences,
+                      style: AppTextStyles.productDesc,
                     ),
                     AppUtils.kBoxHeight24,
                     Row(
@@ -106,7 +124,11 @@ class BasketItemWidget extends StatelessWidget {
           Material(
             color: Colors.transparent,
             child: ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(rootNavigatorKey.currentContext!).pushNamed(
+                  Routes.qrScan,
+                );
+              },
               tileColor: LightThemeColors.imageBg,
               shape: const RoundedRectangleBorder(
                 borderRadius: AppUtils.kBorderRadius12,

@@ -12,6 +12,7 @@ import 'package:malina_delivery/generated/l10n.dart';
 import 'package:malina_delivery/injector_container.dart';
 import 'package:malina_delivery/route/app_routes.dart';
 import 'package:malina_delivery/route/name_routes.dart';
+import 'package:sqflite/sqflite.dart';
 
 class MainPage extends StatelessWidget {
   final String? initialRoute;
@@ -97,8 +98,9 @@ class MainBody extends StatelessWidget {
                           color: LightThemeColors.red,
                           borderRadius: AppUtils.kBorderRadius48),
                       child: (state.tab == MainTab.basketStuff ||
-                              state.tab == MainTab.basketEat)
-                          ? SvgPicture.asset("assets/svg/ic_qr_scan_back.svg")
+                          state.tab == MainTab.basketEat)
+                          ? SvgPicture.asset(
+                          "assets/svg/ic_qr_scan_back.svg")
                           : SvgPicture.asset("assets/svg/ic_qr_scan.svg"),
                     ),
                   ),
@@ -164,7 +166,7 @@ class MainBody extends StatelessWidget {
                                 "assets/svg/ic_basket.svg",
                                 colorFilter: ColorFilter.mode(
                                   (state.tab == MainTab.basketStuff ||
-                                          state.tab == MainTab.basketEat)
+                                      state.tab == MainTab.basketEat)
                                       ? LightThemeColors.red
                                       : LightThemeColors.gray,
                                   BlendMode.srcIn,
@@ -173,7 +175,7 @@ class MainBody extends StatelessWidget {
                               Text(
                                 AppLocalization.current.basket,
                                 style: (state.tab == MainTab.basketStuff ||
-                                        state.tab == MainTab.basketEat)
+                                    state.tab == MainTab.basketEat)
                                     ? AppTextStyles.selectedTab
                                     : AppTextStyles.unSelectedTab,
                               )
@@ -185,7 +187,7 @@ class MainBody extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            )
           ),
         );
       },

@@ -35,6 +35,8 @@ class LightThemeColors extends ThemeColors {
   static const eatBasketTitleColor = Color(0xFF353535);
   static const eatBasketTitleBorderColor = Color(0xFFEDEBEB);
   static const imageBg = Color(0xFFF8F8F8);
+  static const categoryNameColor = Color(0xFF5F5F5F);
+  static const itemDescColor = Color(0xFF777777);
 }
 
 class DarkThemeColors extends ThemeColors {

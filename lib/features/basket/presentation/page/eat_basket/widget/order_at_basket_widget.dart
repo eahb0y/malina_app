@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:malina_delivery/constants/constants.dart';
-import 'package:malina_delivery/core/functions/base_functions.dart';
 import 'package:malina_delivery/core/mock_data/product_mock_data_entity.dart';
-import 'package:malina_delivery/core/product_model/product_model.dart';
 import 'package:malina_delivery/core/utils/app_utils.dart';
 import 'package:malina_delivery/features/basket/presentation/bloc/eat_bloc/eat_bloc.dart';
-import 'package:malina_delivery/core/widgets/basket_item_widget/basket_item_widget.dart';
+import 'package:malina_delivery/features/basket/presentation/page/eat_basket/widget/eat_basket_item_widget.dart';
 
 class OrderAtBasketWidget extends StatelessWidget {
   final List<ProductMockDataEntity>? deliveryProducts;
@@ -23,7 +21,7 @@ class OrderAtBasketWidget extends StatelessWidget {
     return SliverPadding(
       padding: AppUtils.kPaddingHor16,
       sliver: SliverList.separated(
-        itemBuilder: (_, index) => BasketItemWidget(
+        itemBuilder: (_, index) => EatBasketItemWidget(
           item: deliveryProducts?[index],
           count: productCount[deliveryProducts?[index].productId],
           onAddProduct: () {

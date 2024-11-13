@@ -51,4 +51,19 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     color: LightThemeColors.blackTab,
   );
+  static const categoryName = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: LightThemeColors.categoryNameColor,
+  );
+  static const productName = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: LightThemeColors.blackTab,
+  );
+  static const productDesc = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: LightThemeColors.itemDescColor,
+  );
 }
